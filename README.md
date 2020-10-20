@@ -5,4 +5,12 @@ Discord Rainbow Role <br>
 This program can get your Discord account terminated and should  <br>
 be used at your own risk. Anything that you do or happens to you  <br>
 is not the developer Leo Power's fault. This was made for educational <br>
-purposes only!
+purposes only! <br>
+<br>
+## How To Use:
+To run as an .exe file, go to the Application folder <br>
+and download the Rainbow.exe file. <br>
+<br>
+## Programming Langauge Installation:
+<a href="https://www.python.org/downloads/release/python-386/">Python 3.8</a> <br>
+<a href="https://nodejs.org/en/download/">Node JS</a> <br>
