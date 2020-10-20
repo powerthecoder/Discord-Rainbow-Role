@@ -14,3 +14,4 @@ and download the Rainbow.exe file. <br>
 ## Programming Langauge Installation:
 <a href="https://www.python.org/downloads/release/python-386/" target="_blank">Python 3.8</a> <br>
 <a href="https://nodejs.org/en/download/" target="_blank">Node JS</a> <br>
+<br>
