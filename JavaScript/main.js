@@ -4,6 +4,7 @@ const config = require('./config.json')
 const readline = require('readline-sync')
 
 let Token = readline.question("Token: ")
+let Role_Name = readline.question("Role Name: ")
 let guildID = readline.question("Server ID: ")
 
 client.on('ready', () => {
@@ -19,7 +20,7 @@ client.on('ready', () => {
   is not the developer Leo Power's fault. This was made for educational
   purposes only!
   ------------------------------------------------------------------------
-  type &start to start the rainbow role
+  type &start in Discord to start the rainbow role
   `)
   console.log(" ")
   console.log("Bot Online")
@@ -29,7 +30,7 @@ client.on('message', msg => {
   if (msg.content === "&start"){
     var colors = []
     for(let i = 0; i<= colors.length; i++){
-      var role = message.guild.roles.find(role => role.name === config.Role_Name)
+      var role = message.guild.roles.find(role => role.name === Role_Name)
       setInterval(() => {
         role.edit({
           color : colors[i]
