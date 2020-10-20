@@ -28,7 +28,7 @@ client.on('ready', () => {
 
 client.on('message', msg => {
   if (msg.content === "&start"){
-    var colors = []
+    var colors = [0xff0000, 0xff9f00, 0x72ff00, 0x00ff6d, 0x00acff, 0x0200ff, 0xc500ff, 0xff0053]
     for(let i = 0; i<= colors.length; i++){
       var role = message.guild.roles.find(role => role.name === Role_Name)
       setInterval(() => {
