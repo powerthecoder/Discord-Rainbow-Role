@@ -10,6 +10,8 @@ purposes only! <br>
 ## How To Use:
 To run as an .exe file, go to the Application folder <br>
 and download the Rainbow.exe file. <br>
+Make sure to edit the configuration <br> 
+file depending on what you are running <br>
 <br>
 ## Programming Langauge Installation:
 <a href="https://www.python.org/downloads/release/python-386/" target="_blank">Python 3.8</a> <br>
