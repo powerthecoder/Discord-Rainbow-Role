@@ -1,29 +1,22 @@
 import os
 import sys
-
+import asyncio
 try:
     import json
     import random
     import discord
-    from discord.ext import commands
+    from discord.ext import commands, tasks
+    from discord.utils import get
 except:
     os.system("python3 -m pip install -U discord.py")
     os.system("python3 -m pip install -U discord.py[voice]")
     os.system("python3 -m pip install -U random")
     os.system("python3 -m pip install -U json")
 
-with open(os.path.join(sys.path[0], "config.json"), "r") as f:
-    data = json.load(f)
 Token = input("Token: ")
 Role_Name = input("Role Name: ")
-Server_ID = int(input("Server ID: "))
-data['Token'] = Token
-data['Role_Name'] = Role_Name
-data['Server_ID'] = int(Server_ID)
-with open(os.path.join(sys.path[0], "config.json"), "w") as f:
-    json.dump(data, f)
 
-client = commands.Bot(command_prefix=">")
+client = commands.Bot(command_prefix="&")
 
 @client.event
 async def on_ready():
@@ -40,19 +33,21 @@ be used at your own risk. Anything that you do or happens to you
 is not the developer Leo Power's fault. This was made for educational
 purposes only!
 ------------------------------------------------------------------------
+type &start in Discord to start the rainbow role
 
     """)
 
-
-@client.event
-async def rainbow_role():
-    await client.wait_until_ready()
+@client.command()
+async def start(ctx):
     global Role_Name
-    global Server_ID
-    colors = []
-    server = await on_ready
-    while not client.is_closd():
-        await client.edit_role(server=Server_ID, role=role_Name, colour=discord.Colour(random.choice(colors)))
+    colours = [0xff0000, 0xff9f00, 0x72ff00, 0x00ff6d, 0x00acff, 0x0200ff, 0xc500ff, 0xff0053]
+    role = discord.utils.get(ctx.guild.roles, name=Role_Name)
+    x = 0
+    while (x != 1):
+        #await ctx.guild.edit_role(role=role, color=random.choice(colours))
+        await role.edit(colour=random.choice(colours))
         await asyncio.sleep(5)
+
+
 
 client.run(Token)
