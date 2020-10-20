@@ -1,11 +1,10 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
-const config = require('./config.json')
 const readline = require('readline-sync')
+const sleep = require('system-sleep')
 
 let Token = readline.question("Token: ")
 let Role_Name = readline.question("Role Name: ")
-let guildID = readline.question("Server ID: ")
 
 client.on('ready', () => {
   console.log(`
@@ -26,17 +25,19 @@ client.on('ready', () => {
   console.log("Bot Online")
 })
 
-client.on('message', msg => {
-  if (msg.content === "&start"){
-    var colors = [0xff0000, 0xff9f00, 0x72ff00, 0x00ff6d, 0x00acff, 0x0200ff, 0xc500ff, 0xff0053]
-    for(let i = 0; i<= colors.length; i++){
-      var role = message.guild.roles.find(role => role.name === Role_Name)
-      setInterval(() => {
+client.on('message', message => {
+  if(message.content === "&start"){
+    var x = 0
+    while (x != 1){
+      sleep(5*1000)
+      let colors = [0xff0000, 0xff9f00, 0x72ff00, 0x00ff6d, 0x00acff, 0x0200ff, 0xc500ff, 0xff0053]
+      let role = message.guild.roles.cache.find(role => role.name === Role_Name) //Role_Name
+      //let role = message.guild.roles.find(Role_Name, "name")
+      var random_color = Math.floor(Math.random() * colors.length)
         role.edit({
-          color : colors[i]
+          color : colors[random_color]
         })
-      }, 5000);
     }
   }
 })
-client.login(Token)
+client.login(Token) //Token
