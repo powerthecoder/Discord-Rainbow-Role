@@ -12,5 +12,5 @@ To run as an .exe file, go to the Application folder <br>
 and download the Rainbow.exe file. <br>
 <br>
 ## Programming Langauge Installation:
-<a href="https://www.python.org/downloads/release/python-386/">Python 3.8</a> <br>
-<a href="https://nodejs.org/en/download/">Node JS</a> <br>
+<a href="https://www.python.org/downloads/release/python-386/" target="_blank">Python 3.8</a> <br>
+<a href="https://nodejs.org/en/download/" target="_blank">Node JS</a> <br>
